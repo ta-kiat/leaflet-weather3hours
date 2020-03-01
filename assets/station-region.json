@@ -1,0 +1,870 @@
+stations = [{
+		"region": "Central",
+		"stationNameThai": "\u0e01\u0e1a\u0e34\u0e19\u0e17\u0e23\u0e4c\u0e1a\u0e38\u0e23\u0e35",
+		"wmoCode": "48439",
+		"latitude": 13.9833333333,
+		"longitude": 101.7072222222,
+		"heightAboveMSL": "12.74"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23",
+		"wmoCode": "48455",
+		"latitude": 13.7263888889,
+		"longitude": 100.56,
+		"heightAboveMSL": "3.01"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e2f \u0e17\u0e48\u0e32\u0e40\u0e23\u0e37\u0e2d\u0e04\u0e25\u0e2d\u0e07\u0e40\u0e15\u0e22",
+		"wmoCode": "48454",
+		"latitude": 13.7069444444,
+		"longitude": 100.5680555556,
+		"heightAboveMSL": "2.80"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e2f \u0e1a\u0e32\u0e07\u0e19\u0e32 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48453",
+		"latitude": 13.6663888889,
+		"longitude": 100.6061111111,
+		"heightAboveMSL": "3.00"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e2f \u0e1a\u0e32\u0e07\u0e40\u0e02\u0e19 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48452",
+		"latitude": 13.85,
+		"longitude": 100.5833333333,
+		"heightAboveMSL": "4.00"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e01\u0e32\u0e0d\u0e08\u0e19\u0e1a\u0e38\u0e23\u0e35",
+		"wmoCode": "48450",
+		"latitude": 14.0225,
+		"longitude": 99.5358333333,
+		"heightAboveMSL": "27.53"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e0a\u0e31\u0e22\u0e19\u0e32\u0e17 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48402",
+		"latitude": 15.15,
+		"longitude": 100.1833333333,
+		"heightAboveMSL": "15.00"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e15\u0e32\u0e01\u0e1f\u0e49\u0e32 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48401",
+		"latitude": 15.3494444444,
+		"longitude": 100.5302777778,
+		"heightAboveMSL": "86.67"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e17\u0e2d\u0e07\u0e1c\u0e32\u0e20\u0e39\u0e21\u0e34",
+		"wmoCode": "48421",
+		"latitude": 14.7422222222,
+		"longitude": 98.6363888889,
+		"heightAboveMSL": "97.36"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e19\u0e04\u0e23\u0e1b\u0e10\u0e21",
+		"wmoCode": "48451",
+		"latitude": 14.0116666667,
+		"longitude": 99.97,
+		"heightAboveMSL": "7.46"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e19\u0e04\u0e23\u0e2a\u0e27\u0e23\u0e23\u0e04\u0e4c ",
+		"wmoCode": "48400",
+		"latitude": 15.6718333333,
+		"longitude": 100.1323611111,
+		"heightAboveMSL": "33.91"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e1a\u0e31\u0e27\u0e0a\u0e38\u0e21  ",
+		"wmoCode": "48418",
+		"latitude": 15.2666666667,
+		"longitude": 101.1873611111,
+		"heightAboveMSL": "49.28"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e1b\u0e17\u0e38\u0e21\u0e18\u0e32\u0e19\u0e35 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48419",
+		"latitude": 14.1,
+		"longitude": 100.6166666667,
+		"heightAboveMSL": "6.00"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e1b\u0e23\u0e32\u0e08\u0e35\u0e19\u0e1a\u0e38\u0e23\u0e35",
+		"wmoCode": "48430",
+		"latitude": 14.0584166667,
+		"longitude": 101.3693055556,
+		"heightAboveMSL": "5.14"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e23\u0e32\u0e0a\u0e1a\u0e38\u0e23\u0e35",
+		"wmoCode": "48464",
+		"latitude": 13.4893055556,
+		"longitude": 99.7923888889,
+		"heightAboveMSL": "5.00"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e25\u0e1e\u0e1a\u0e38\u0e23\u0e35",
+		"wmoCode": "48426",
+		"latitude": 14.7997222222,
+		"longitude": 100.645,
+		"heightAboveMSL": "10.00"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e2a\u0e19\u0e32\u0e21\u0e1a\u0e34\u0e19\u0e14\u0e2d\u0e19\u0e40\u0e21\u0e37\u0e2d\u0e07",
+		"wmoCode": "48456",
+		"latitude": 13.9191666667,
+		"longitude": 100.605,
+		"heightAboveMSL": "12.00"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e2a\u0e19\u0e32\u0e21\u0e1a\u0e34\u0e19\u0e2a\u0e38\u0e27\u0e23\u0e23\u0e13\u0e20\u0e39\u0e21\u0e34",
+		"wmoCode": "48429",
+		"latitude": 13.6863888889,
+		"longitude": 100.7675,
+		"heightAboveMSL": ".96"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e2a\u0e38\u0e1e\u0e23\u0e23\u0e13\u0e1a\u0e38\u0e23\u0e35",
+		"wmoCode": "48425",
+		"latitude": 14.4744444444,
+		"longitude": 100.1388888889,
+		"heightAboveMSL": "7.23"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e2d\u0e39\u0e48\u0e17\u0e2d\u0e07 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48427",
+		"latitude": 14.3036111111,
+		"longitude": 99.8647222222,
+		"heightAboveMSL": "6.00"
+	}, {
+		"region": "Central",
+		"stationNameThai": "\u0e40\u0e1e\u0e0a\u0e23\u0e1a\u0e38\u0e23\u0e35",
+		"wmoCode": "48465",
+		"latitude": 12.9994444444,
+		"longitude": 100.0605555556,
+		"heightAboveMSL": "2.01"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e08\u0e31\u0e19\u0e17\u0e1a\u0e38\u0e23\u0e35",
+		"wmoCode": "48480",
+		"latitude": 12.6166666667,
+		"longitude": 102.1133333333,
+		"heightAboveMSL": "2.68"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e09\u0e30\u0e40\u0e0a\u0e34\u0e07\u0e40\u0e17\u0e23\u0e32",
+		"wmoCode": "48458",
+		"latitude": 13.5155555556,
+		"longitude": 101.4583333333,
+		"heightAboveMSL": "70.17"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e0a\u0e25\u0e1a\u0e38\u0e23\u0e35",
+		"wmoCode": "48459",
+		"latitude": 13.3666666667,
+		"longitude": 100.9833333333,
+		"heightAboveMSL": ".86"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e15\u0e23\u0e32\u0e14",
+		"wmoCode": "48501",
+		"latitude": 11.7666666667,
+		"longitude": 102.8833333333,
+		"heightAboveMSL": "2.00"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e19\u0e33\u0e23\u0e48\u0e2d\u0e07",
+		"wmoCode": "48457",
+		"latitude": 13.3938888889,
+		"longitude": 100.5994444444,
+		"heightAboveMSL": "14.00"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e1e\u0e25\u0e34\u0e49\u0e27 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48481",
+		"latitude": 12.5086111111,
+		"longitude": 102.1730555556,
+		"heightAboveMSL": "24.00"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e1e\u0e31\u0e17\u0e22\u0e32",
+		"wmoCode": "48461",
+		"latitude": 12.92,
+		"longitude": 100.8694444444,
+		"heightAboveMSL": "58.93"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e23\u0e30\u0e22\u0e2d\u0e07",
+		"wmoCode": "48478",
+		"latitude": 12.6322222222,
+		"longitude": 101.3436111111,
+		"heightAboveMSL": "2.60"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e2a\u0e21\u0e38\u0e17\u0e23\u0e1b\u0e23\u0e32\u0e01\u0e32\u0e23 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48420",
+		"latitude": 13.5166666667,
+		"longitude": 100.7616666667,
+		"heightAboveMSL": "1.44"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e2a\u0e23\u0e30\u0e41\u0e01\u0e49\u0e27",
+		"wmoCode": "48440",
+		"latitude": 13.7888888889,
+		"longitude": 102.0347222222,
+		"heightAboveMSL": "42.93"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e2a\u0e31\u0e15\u0e2b\u0e35\u0e1a",
+		"wmoCode": "48477",
+		"latitude": 12.6833333333,
+		"longitude": 100.9833333333,
+		"heightAboveMSL": "16.00"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e2b\u0e49\u0e27\u0e22\u0e42\u0e1b\u0e48\u0e07 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48479",
+		"latitude": 12.7333333333,
+		"longitude": 101.1333333333,
+		"heightAboveMSL": "43.00"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e2d\u0e23\u0e31\u0e0d\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28",
+		"wmoCode": "48462",
+		"latitude": 13.7,
+		"longitude": 102.5833333333,
+		"heightAboveMSL": "47.00"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e40\u0e01\u0e32\u0e30\u0e2a\u0e35\u0e0a\u0e31\u0e07",
+		"wmoCode": "48460",
+		"latitude": 13.1616666667,
+		"longitude": 100.8019444444,
+		"heightAboveMSL": "24.85"
+	}, {
+		"region": "Eastern",
+		"stationNameThai": "\u0e41\u0e2b\u0e25\u0e21\u0e09\u0e1a\u0e31\u0e07",
+		"wmoCode": "48463",
+		"latitude": 13.0769444444,
+		"longitude": 100.8758333333,
+		"heightAboveMSL": "81.00"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e01\u0e32\u0e2c\u0e2a\u0e34\u0e19\u0e18\u0e38\u0e4c",
+		"wmoCode": "48390",
+		"latitude": 16.3325,
+		"longitude": 103.5883333333,
+		"heightAboveMSL": "138.75"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e02\u0e2d\u0e19\u0e41\u0e01\u0e48\u0e19",
+		"wmoCode": "48381",
+		"latitude": 16.4611111111,
+		"longitude": 102.7897222222,
+		"heightAboveMSL": "186.97"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e0a\u0e31\u0e22\u0e20\u0e39\u0e21\u0e34",
+		"wmoCode": "48403",
+		"latitude": 15.8,
+		"longitude": 102.0333333333,
+		"heightAboveMSL": "182.15"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e17\u0e48\u0e32\u0e15\u0e39\u0e21",
+		"wmoCode": "48416",
+		"latitude": 15.3166666667,
+		"longitude": 103.6833333333,
+		"heightAboveMSL": "127.62"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e17\u0e48\u0e32\u0e1e\u0e23\u0e30 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48384",
+		"latitude": 16.3333333333,
+		"longitude": 102.8166666667,
+		"heightAboveMSL": "166.00"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e19\u0e04\u0e23\u0e1e\u0e19\u0e21",
+		"wmoCode": "48357",
+		"latitude": 17.4108333333,
+		"longitude": 104.7825,
+		"heightAboveMSL": "140.00"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e19\u0e04\u0e23\u0e1e\u0e19\u0e21 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48358",
+		"latitude": 17.4430555556,
+		"longitude": 104.7736111111,
+		"heightAboveMSL": "153.13"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e19\u0e04\u0e23\u0e23\u0e32\u0e0a\u0e2a\u0e35\u0e21\u0e32",
+		"wmoCode": "48431",
+		"latitude": 14.9683055556,
+		"longitude": 102.0860277778,
+		"heightAboveMSL": "186.60"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e19\u0e32\u0e07\u0e23\u0e2d\u0e07",
+		"wmoCode": "48436",
+		"latitude": 14.5833333333,
+		"longitude": 102.8,
+		"heightAboveMSL": "179.00"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e1a\u0e38\u0e23\u0e35\u0e23\u0e31\u0e21\u0e22\u0e4c",
+		"wmoCode": "48437",
+		"latitude": 15.22575,
+		"longitude": 103.2480833333,
+		"heightAboveMSL": "182.00"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e1b\u0e32\u0e01\u0e0a\u0e48\u0e2d\u0e07 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48435",
+		"latitude": 14.6438888889,
+		"longitude": 101.3319444444,
+		"heightAboveMSL": "386.12"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e21\u0e2b\u0e32\u0e2a\u0e32\u0e23\u0e04\u0e32\u0e21",
+		"wmoCode": "48382",
+		"latitude": 16.2472222222,
+		"longitude": 103.0680555556,
+		"heightAboveMSL": "153.00"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e21\u0e38\u0e01\u0e14\u0e32\u0e2b\u0e32\u0e23",
+		"wmoCode": "48383",
+		"latitude": 16.5413888889,
+		"longitude": 104.7288888889,
+		"heightAboveMSL": "138.00"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e23\u0e49\u0e2d\u0e22\u0e40\u0e2d\u0e47\u0e14",
+		"wmoCode": "48405",
+		"latitude": 16.02,
+		"longitude": 103.7438888889,
+		"heightAboveMSL": "140.00"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e23\u0e49\u0e2d\u0e22\u0e40\u0e2d\u0e47\u0e14 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48404",
+		"latitude": 16.0732222222,
+		"longitude": 103.6084444444,
+		"heightAboveMSL": "153.00"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e28\u0e23\u0e35\u0e2a\u0e30\u0e40\u0e01\u0e29",
+		"wmoCode": "48409",
+		"latitude": 15.0,
+		"longitude": 104.05,
+		"heightAboveMSL": "122.87"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e2a\u0e01\u0e25\u0e19\u0e04\u0e23",
+		"wmoCode": "48356",
+		"latitude": 17.15,
+		"longitude": 104.1333333333,
+		"heightAboveMSL": "171.00"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e2a\u0e01\u0e25\u0e19\u0e04\u0e23 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48355",
+		"latitude": 17.1250277778,
+		"longitude": 104.061,
+		"heightAboveMSL": "192.00"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e2a\u0e38\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c",
+		"wmoCode": "48432",
+		"latitude": 14.8833333333,
+		"longitude": 103.5,
+		"heightAboveMSL": "145.81"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e2a\u0e38\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48433",
+		"latitude": 14.8833333333,
+		"longitude": 103.45,
+		"heightAboveMSL": "142.56"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e2b\u0e19\u0e2d\u0e07\u0e04\u0e32\u0e22",
+		"wmoCode": "48352",
+		"latitude": 17.8671666667,
+		"longitude": 102.7330277778,
+		"heightAboveMSL": "173.21"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e2d\u0e38\u0e14\u0e23\u0e18\u0e32\u0e19\u0e35",
+		"wmoCode": "48354",
+		"latitude": 17.3833333333,
+		"longitude": 102.8,
+		"heightAboveMSL": "177.00"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e2d\u0e38\u0e1a\u0e25\u0e23\u0e32\u0e0a\u0e18\u0e32\u0e19\u0e35 (\u0e28\u0e39\u0e19\u0e22\u0e4c\u0e2f)",
+		"wmoCode": "48407",
+		"latitude": 15.25,
+		"longitude": 104.8666666667,
+		"heightAboveMSL": "122.00"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e2d\u0e38\u0e1a\u0e25\u0e23\u0e32\u0e0a\u0e18\u0e32\u0e19\u0e35 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48408",
+		"latitude": 15.2391388889,
+		"longitude": 105.0235,
+		"heightAboveMSL": "129.76"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e40\u0e25\u0e22",
+		"wmoCode": "48353",
+		"latitude": 17.45,
+		"longitude": 101.7333333333,
+		"heightAboveMSL": "252.51"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e40\u0e25\u0e22 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48350",
+		"latitude": 17.4,
+		"longitude": 101.7333333333,
+		"heightAboveMSL": "260.30"
+	}, {
+		"region": "North Eastern",
+		"stationNameThai": "\u0e42\u0e0a\u0e04\u0e0a\u0e31\u0e22",
+		"wmoCode": "48434",
+		"latitude": 14.7188888889,
+		"longitude": 102.1686111111,
+		"heightAboveMSL": "190.34"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e01\u0e33\u0e41\u0e1e\u0e07\u0e40\u0e1e\u0e0a\u0e23",
+		"wmoCode": "48380",
+		"latitude": 16.4868055556,
+		"longitude": 99.5269722222,
+		"heightAboveMSL": "80.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e14\u0e2d\u0e22\u0e21\u0e39\u0e40\u0e0b\u0e2d\u0e23\u0e4c \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48387",
+		"latitude": 16.75,
+		"longitude": 98.9333333333,
+		"heightAboveMSL": "863.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e14\u0e2d\u0e22\u0e2d\u0e48\u0e32\u0e07\u0e02\u0e32\u0e07",
+		"wmoCode": "48302",
+		"latitude": 19.9313888889,
+		"longitude": 99.0483333333,
+		"heightAboveMSL": "1529.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e15\u0e32\u0e01",
+		"wmoCode": "48376",
+		"latitude": 16.8783333333,
+		"longitude": 99.1433333333,
+		"heightAboveMSL": "125.62"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e17\u0e38\u0e48\u0e07\u0e0a\u0e49\u0e32\u0e07",
+		"wmoCode": "48307",
+		"latitude": 19.4119444444,
+		"longitude": 100.8835277778,
+		"heightAboveMSL": "333.39"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e17\u0e48\u0e32\u0e27\u0e31\u0e07\u0e1c\u0e32",
+		"wmoCode": "48315",
+		"latitude": 19.1105555556,
+		"longitude": 100.8025,
+		"heightAboveMSL": "234.70"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e19\u0e48\u0e32\u0e19",
+		"wmoCode": "48331",
+		"latitude": 18.7797222222,
+		"longitude": 100.7777777778,
+		"heightAboveMSL": "200.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e19\u0e48\u0e32\u0e19 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48333",
+		"latitude": 18.8666666667,
+		"longitude": 100.75,
+		"heightAboveMSL": "264.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e1e\u0e30\u0e40\u0e22\u0e32",
+		"wmoCode": "48310",
+		"latitude": 19.1333333333,
+		"longitude": 99.9,
+		"heightAboveMSL": "396.89"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e1e\u0e34\u0e08\u0e34\u0e15\u0e23 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48386",
+		"latitude": 16.4380555556,
+		"longitude": 100.2925,
+		"heightAboveMSL": "35.95"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e1e\u0e34\u0e29\u0e13\u0e38\u0e42\u0e25\u0e01",
+		"wmoCode": "48378",
+		"latitude": 16.7948055556,
+		"longitude": 100.2793055556,
+		"heightAboveMSL": "44.02"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e25\u0e33\u0e1b\u0e32\u0e07",
+		"wmoCode": "48328",
+		"latitude": 18.2833333333,
+		"longitude": 99.5166666667,
+		"heightAboveMSL": "242.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e25\u0e33\u0e1b\u0e32\u0e07 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48334",
+		"latitude": 18.3166666667,
+		"longitude": 99.2833333333,
+		"heightAboveMSL": "315.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e25\u0e33\u0e1e\u0e39\u0e19",
+		"wmoCode": "48329",
+		"latitude": 18.5672222222,
+		"longitude": 99.0338888889,
+		"heightAboveMSL": "296.42"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e27\u0e34\u0e40\u0e0a\u0e35\u0e22\u0e23\u0e1a\u0e38\u0e23\u0e35",
+		"wmoCode": "48413",
+		"latitude": 15.657,
+		"longitude": 101.108,
+		"heightAboveMSL": "68.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e28\u0e23\u0e35\u0e2a\u0e33\u0e42\u0e23\u0e07 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48373",
+		"latitude": 17.1613611111,
+		"longitude": 99.8616666667,
+		"heightAboveMSL": "54.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e2a\u0e38\u0e42\u0e02\u0e17\u0e31\u0e22",
+		"wmoCode": "48372",
+		"latitude": 17.1061111111,
+		"longitude": 99.8,
+		"heightAboveMSL": "48.29"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e2b\u0e25\u0e48\u0e21\u0e2a\u0e31\u0e01",
+		"wmoCode": "48374",
+		"latitude": 16.7736111111,
+		"longitude": 101.2494444444,
+		"heightAboveMSL": "142.81"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e2d\u0e38\u0e15\u0e23\u0e14\u0e34\u0e15\u0e16\u0e4c",
+		"wmoCode": "48351",
+		"latitude": 17.6166666667,
+		"longitude": 100.1,
+		"heightAboveMSL": "63.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e2d\u0e38\u0e49\u0e21\u0e1c\u0e32\u0e07",
+		"wmoCode": "48385",
+		"latitude": 16.0247222222,
+		"longitude": 98.8644444444,
+		"heightAboveMSL": "454.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e40\u0e02\u0e37\u0e48\u0e2d\u0e19\u0e20\u0e39\u0e21\u0e34\u0e1e\u0e25",
+		"wmoCode": "48377",
+		"latitude": 17.2438888889,
+		"longitude": 99.0025,
+		"heightAboveMSL": "143.73"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e23\u0e32\u0e22",
+		"wmoCode": "48303",
+		"latitude": 19.9613888889,
+		"longitude": 99.8813888889,
+		"heightAboveMSL": "390.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e23\u0e32\u0e22 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48304",
+		"latitude": 19.8708333333,
+		"longitude": 99.7827777778,
+		"heightAboveMSL": "397.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48",
+		"wmoCode": "48327",
+		"latitude": 18.79,
+		"longitude": 98.9769444444,
+		"heightAboveMSL": "313.20"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e40\u0e16\u0e34\u0e19",
+		"wmoCode": "48324",
+		"latitude": 17.6366111111,
+		"longitude": 99.24475,
+		"heightAboveMSL": "190.89"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e40\u0e1e\u0e0a\u0e23\u0e1a\u0e39\u0e23\u0e13\u0e4c",
+		"wmoCode": "48379",
+		"latitude": 16.4333333333,
+		"longitude": 101.15,
+		"heightAboveMSL": "114.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e41\u0e1e\u0e23\u0e48",
+		"wmoCode": "48330",
+		"latitude": 18.1666666667,
+		"longitude": 100.1666666667,
+		"heightAboveMSL": "161.79"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e41\u0e21\u0e48\u0e2a\u0e2d\u0e14",
+		"wmoCode": "48375",
+		"latitude": 16.6591666667,
+		"longitude": 98.5508333333,
+		"heightAboveMSL": "196.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e41\u0e21\u0e48\u0e2a\u0e30\u0e40\u0e23\u0e35\u0e22\u0e07",
+		"wmoCode": "48325",
+		"latitude": 18.1666666667,
+		"longitude": 97.9333333333,
+		"heightAboveMSL": "211.00"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e41\u0e21\u0e48\u0e2e\u0e48\u0e2d\u0e07\u0e2a\u0e2d\u0e19",
+		"wmoCode": "48300",
+		"latitude": 19.2989722222,
+		"longitude": 97.9757777778,
+		"heightAboveMSL": "267.74"
+	}, {
+		"region": "Northern",
+		"stationNameThai": "\u0e41\u0e21\u0e48\u0e42\u0e08\u0e49 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48326",
+		"latitude": 18.7833333333,
+		"longitude": 98.9833333333,
+		"heightAboveMSL": "316.53"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e02\u0e19\u0e2d\u0e21",
+		"wmoCode": "48553",
+		"latitude": 9.2430555556,
+		"longitude": 99.8575,
+		"heightAboveMSL": "5.00"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e04\u0e2d\u0e2b\u0e07\u0e29\u0e4c \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48571",
+		"latitude": 7.0,
+		"longitude": 100.5,
+		"heightAboveMSL": "6.96"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e09\u0e27\u0e32\u0e07",
+		"wmoCode": "48557",
+		"latitude": 8.4319444444,
+		"longitude": 99.5119444444,
+		"heightAboveMSL": "28.12"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e0a\u0e38\u0e21\u0e1e\u0e23",
+		"wmoCode": "48517",
+		"latitude": 10.49875,
+		"longitude": 99.1884722222,
+		"heightAboveMSL": "4.40"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e19\u0e04\u0e23\u0e28\u0e23\u0e35\u0e18\u0e23\u0e23\u0e21\u0e23\u0e32\u0e0a",
+		"wmoCode": "48552",
+		"latitude": 8.5377777778,
+		"longitude": 99.9638888889,
+		"heightAboveMSL": "3.14"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e19\u0e04\u0e23\u0e28\u0e23\u0e35\u0e18\u0e23\u0e23\u0e21\u0e23\u0e32\u0e0a \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48554",
+		"latitude": 8.3593055556,
+		"longitude": 100.0,
+		"heightAboveMSL": "1.81"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e19\u0e23\u0e32\u0e18\u0e34\u0e27\u0e32\u0e2a",
+		"wmoCode": "48583",
+		"latitude": 6.4166666667,
+		"longitude": 101.8166666667,
+		"heightAboveMSL": "3.57"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e1b\u0e23\u0e30\u0e08\u0e27\u0e1a\u0e04\u0e35\u0e23\u0e35\u0e02\u0e31\u0e19\u0e18\u0e4c",
+		"wmoCode": "48500",
+		"latitude": 11.8333333333,
+		"longitude": 99.8333333333,
+		"heightAboveMSL": "4.00"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e1b\u0e31\u0e15\u0e15\u0e32\u0e19\u0e35",
+		"wmoCode": "48580",
+		"latitude": 6.7833333333,
+		"longitude": 101.15,
+		"heightAboveMSL": "4.05"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e1e\u0e23\u0e30\u0e41\u0e2a\u0e07 \u0e2a\u0e2d\u0e17.",
+		"wmoCode": "48556",
+		"latitude": 8.5702222222,
+		"longitude": 99.25825,
+		"heightAboveMSL": "12.08"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e1e\u0e31\u0e17\u0e25\u0e38\u0e07 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48560",
+		"latitude": 7.5833333333,
+		"longitude": 100.1666666667,
+		"heightAboveMSL": "2.00"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e22\u0e30\u0e25\u0e32 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48581",
+		"latitude": 6.5166666667,
+		"longitude": 101.2833333333,
+		"heightAboveMSL": "30.00"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e2a\u0e07\u0e02\u0e25\u0e32",
+		"wmoCode": "48568",
+		"latitude": 7.1821111111,
+		"longitude": 100.6076944444,
+		"heightAboveMSL": "4.57"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e2a\u0e16\u0e32\u0e19\u0e35\u0e15\u0e23\u0e27\u0e08\u0e2d\u0e32\u0e01\u0e32\u0e28\u0e2a\u0e38\u0e23\u0e32\u0e29\u0e0e\u0e23\u0e4c\u0e18\u0e32\u0e19\u0e35",
+		"wmoCode": {},
+		"latitude": 9.1355555556,
+		"longitude": 99.1519444444,
+		"heightAboveMSL": "5.00"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e2a\u0e27\u0e35 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48520",
+		"latitude": 10.3333333333,
+		"longitude": 99.1,
+		"heightAboveMSL": "13.00"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e2a\u0e30\u0e40\u0e14\u0e32",
+		"wmoCode": "48574",
+		"latitude": 6.7980555556,
+		"longitude": 100.3905555556,
+		"heightAboveMSL": "24.70"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e2a\u0e38\u0e23\u0e32\u0e29\u0e0e\u0e23\u0e4c\u0e18\u0e32\u0e19\u0e35",
+		"wmoCode": "48551",
+		"latitude": 9.1355555556,
+		"longitude": 99.1519444444,
+		"heightAboveMSL": "5.00"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e2a\u0e38\u0e23\u0e32\u0e29\u0e0e\u0e23\u0e4c\u0e18\u0e32\u0e19\u0e35 \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48555",
+		"latitude": 9.1,
+		"longitude": 99.6333333333,
+		"heightAboveMSL": "36.80"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e2b\u0e19\u0e2d\u0e07\u0e1e\u0e25\u0e31\u0e1a \u0e2a\u0e01\u0e29.",
+		"wmoCode": "48474",
+		"latitude": 12.5833333333,
+		"longitude": 99.7333333333,
+		"heightAboveMSL": "106.00"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e2b\u0e31\u0e27\u0e2b\u0e34\u0e19",
+		"wmoCode": "48475",
+		"latitude": 12.5861111111,
+		"longitude": 99.9625,
+		"heightAboveMSL": "4.73"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e2b\u0e32\u0e14\u0e43\u0e2b\u0e0d\u0e48",
+		"wmoCode": "48569",
+		"latitude": 6.9166666667,
+		"longitude": 100.4333333333,
+		"heightAboveMSL": "27.40"
+	}, {
+		"region": "Southern Eastern",
+		"stationNameThai": "\u0e40\u0e01\u0e32\u0e30\u0e2a\u0e21\u0e38\u0e22",
+		"wmoCode": "48550",
+		"latitude": 9.4666666667,
+		"longitude": 100.05,
+		"heightAboveMSL": "4.00"
+	}, {
+		"region": "Southern Western",
+		"stationNameThai": "\u0e01\u0e23\u0e30\u0e1a\u0e35\u0e48",
+		"wmoCode": "48563",
+		"latitude": 8.1036111111,
+		"longitude": 98.9752777778,
+		"heightAboveMSL": "8.00"
+	}, {
+		"region": "Southern Western",
+		"stationNameThai": "\u0e15\u0e23\u0e31\u0e07",
+		"wmoCode": "48567",
+		"latitude": 7.5166666667,
+		"longitude": 99.6166666667,
+		"heightAboveMSL": "14.32"
+	}, {
+		"region": "Southern Western",
+		"stationNameThai": "\u0e15\u0e30\u0e01\u0e31\u0e48\u0e27\u0e1b\u0e48\u0e32",
+		"wmoCode": "48561",
+		"latitude": 8.6841666667,
+		"longitude": 98.2522222222,
+		"heightAboveMSL": "5.93"
+	}, {
+		"region": "Southern Western",
+		"stationNameThai": "\u0e20\u0e39\u0e40\u0e01\u0e47\u0e15",
+		"wmoCode": "48564",
+		"latitude": 7.8833333333,
+		"longitude": 98.4,
+		"heightAboveMSL": "1.83"
+	}, {
+		"region": "Southern Western",
+		"stationNameThai": "\u0e20\u0e39\u0e40\u0e01\u0e47\u0e15 (\u0e28\u0e39\u0e19\u0e22\u0e4c\u0e2f)",
+		"wmoCode": "48565",
+		"latitude": 8.145,
+		"longitude": 98.3144444444,
+		"heightAboveMSL": "5.86"
+	}, {
+		"region": "Southern Western",
+		"stationNameThai": "\u0e23\u0e30\u0e19\u0e2d\u0e07",
+		"wmoCode": "48532",
+		"latitude": 9.9833333333,
+		"longitude": 98.6166666667,
+		"heightAboveMSL": "7.00"
+	}, {
+		"region": "Southern Western",
+		"stationNameThai": "\u0e2a\u0e15\u0e39\u0e25",
+		"wmoCode": "48570",
+		"latitude": 6.65,
+		"longitude": 100.0833333333,
+		"heightAboveMSL": "4.06"
+	}, {
+		"region": "Southern Western",
+		"stationNameThai": "\u0e40\u0e01\u0e32\u0e30\u0e25\u0e31\u0e19\u0e15\u0e32",
+		"wmoCode": "48566",
+		"latitude": 7.5333333333,
+		"longitude": 99.05,
+		"heightAboveMSL": "2.00"
+	}
+]

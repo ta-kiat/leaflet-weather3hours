@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/icons/site.webmanifest">
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="./assets/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Weather3Hours</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="./assets/station-region.json"></script>
+
+    <script type="text/javascript" src="./lib/xml2json.js"></script>
+
+    <style>
+        #mapid {
+            height: 97vh;
+        }
+    </style>
+
+    <script>
+
+        function xmlToJson(xml) {
+
+            // Create the return object
+            var obj = {};
+
+            if (xml.nodeType == 1) { // element
+                // do attributes
+                if (xml.attributes.length > 0) {
+                    obj["@attributes"] = {};
+                    for (var j = 0; j < xml.attributes.length; j++) {
+                        var attribute = xml.attributes.item(j);
+                        obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+                    }
+                }
+            } else if (xml.nodeType == 3) { // text
+                obj = xml.nodeValue;
+            }
+
+            // do children
+            if (xml.hasChildNodes()) {
+                for (var i = 0; i < xml.childNodes.length; i++) {
+                    var item = xml.childNodes.item(i);
+                    var nodeName = item.nodeName;
+                    if (typeof (obj[nodeName]) == "undefined") {
+                        obj[nodeName] = xmlToJson(item);
+                    } else {
+                        if (typeof (obj[nodeName].push) == "undefined") {
+                            var old = obj[nodeName];
+                            obj[nodeName] = [];
+                            obj[nodeName].push(old);
+                        }
+                        obj[nodeName].push(xmlToJson(item));
+                    }
+                }
+            }
+            return obj;
+        };
+
+        $(document).ready(function () {
+            var mapboxUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGEtayIsImEiOiJjazc4cWYycDIwbGN6M2VwY3FjcjZyNWV0In0.L-8FKMpD8KeKPvCpkTsNwA';
+            var mapboxAttribution = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>, Weather Data <a href="https://data.tmd.go.th/api/index1.php">TMD Data</a>';
+            var grayscale = L.tileLayer(mapboxUrl, { id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution });
+            var streets = L.tileLayer(mapboxUrl, { id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution });
+
+
+            var imageList = ['disable-1.1s-128px.svg', 'rain-1.1s-128px.svg', 'sun-1.1s-128px.svg', 'moon-1.1s-128px.svg']
+            var iconSmall = []
+            var iconBig = []
+            for (img of imageList) {
+                var size = 32;
+                var iconSize = [size, size]
+                iconSmall.push(
+                    new L.Icon({
+                        iconUrl: 'assets/' + img,
+                        iconSize: iconSize
+                    }));
+                size = 64;
+                iconSize = [size, size]
+                iconBig.push(
+                    new L.Icon({
+                        iconUrl: 'assets/' + img,
+                        iconSize: iconSize
+                    }));
+            }
+            var baseMaps = {
+                "Streets": streets,
+                "<span style='color: gray'>Grayscale</span>": grayscale
+            };
+
+            //var bounds = L.latLngBounds([[10.736717, 97.523186], [16.736717, 103.523186]]);
+            var map = L.map('mapid', {
+                center: [13.736717, 100.523186],
+                zoom: 6,
+                layers: [streets]
+            });
+
+            var imageUrl = './assets/Ripple-1s-200px.svg',
+                imageBounds = [[10.736717, 97.523186], [16.736717, 103.523186]];
+            var loading = L.imageOverlay(imageUrl, imageBounds);
+            loading.addTo(map);
+            $.get("https://cors-anywhere.herokuapp.com/data.tmd.go.th/api/Weather3Hours/V2/?uid=api&ukey=api12345", function (data) {
+                responseList = xmlToJson(data)['Weather3Hours']['Stations']['Station'];
+                observe = {};
+                for (var station of responseList) {
+                    try {
+                        var wmo = station['WmoStationNumber']['#text'];
+                        var rain = parseFloat(station['Observation']['Rainfall24Hr']['#text']) > 0;
+                        observe[wmo] = rain;
+                    } catch (e) {
+                    }
+                }
+
+                var tmpIndex = 2;
+                var now = new Date();
+                if (now.getHours() >= 18 || now.getHours() < 6) {
+                    tmpIndex = 3;
+                }
+
+                region = {};
+                for (var i = 0; i < stations.length; i++) {
+                    station = stations[i];
+                    if (!station['wmoCode'] in observe) {
+                        station['icon'] = 0;
+                    } else if (observe[station['wmoCode']]) {
+                        station['icon'] = 1;
+                    } else {
+                        station['icon'] = tmpIndex;
+                    }
+
+                    if (station['region'] in region) {
+                        region[station['region']].push(station)
+                    } else {
+                        region[station['region']] = [station]
+                    }
+                }
+                overlay = {};
+                allList = [];
+                overlayBig = {};
+                allListBig = [];
+                for (var key of Object.keys(region)) {
+                    stations = region[key]
+                    stationList = []
+                    stationListBig = []
+                    for (var station of stations) {
+                        stationList.push(L.marker([station['latitude'], station['longitude']], { icon: iconSmall[station['icon']] }).bindPopup(station['stationNameThai']));
+                        stationListBig.push(L.marker([station['latitude'], station['longitude']], { icon: iconBig[station['icon']] }).bindPopup(station['stationNameThai']));
+                    }
+                    overlay[key] = L.layerGroup(stationList);
+                    allList.push(overlay[key]);
+                    overlayBig[key] = L.layerGroup(stationListBig);
+                    allListBig.push(overlayBig[key]);
+                }
+
+                loading.removeFrom(map);
+
+                var layerSmall = L.layerGroup(allList);
+                var controlSmall = L.control.layers(baseMaps, overlay);
+
+                var layerBig = L.layerGroup(allListBig);
+                var controlBig = L.control.layers(baseMaps, overlayBig);
+
+                mapLayout(map, layerSmall, controlSmall, layerBig, controlBig);
+
+                map.on('zoomend', function () {
+                    mapLayout(map, layerSmall, controlSmall, layerBig, controlBig);
+                });
+            });
+        });
+
+        function mapLayout(map, layerSmall, controlSmall, layerBig, controlBig) {
+            var zoomlevel = map.getZoom();
+            if (zoomlevel < 7) {
+                if (map.hasLayer(layerBig)) {
+                    map.removeLayer(layerBig);
+                }
+                if (!map.hasLayer(layerSmall)) {
+                    map.addLayer(layerSmall);
+                }
+                map.removeControl(controlBig);
+                map.addControl(controlSmall);
+            } else {
+                if (map.hasLayer(layerSmall)) {
+                    map.removeLayer(layerSmall);
+                }
+                if (!map.hasLayer(layerBig)) {
+                    map.addLayer(layerBig);
+                }
+                map.removeControl(controlSmall);
+                map.addControl(controlBig);
+            }
+        }
+    </script>
+</head>
+
+
+<body>
+    <div id="mapid"></div>
+</body>
+
+</html>
