@@ -203,13 +203,12 @@
                 var layerBig = L.layerGroup(allListBig);
                 var controlBig = L.control.layers(baseMaps, overlayBig);
 
-                map.addLayer(layerSmall);
+                zoomMap();
                 $('#accordionExample').append($('#weather3hoursRegion'));
-                // mapLayout(map, layerSmall, controlSmall, layerBig, controlBig);
 
-                // map.on('zoomend', function () {
-                //     mapLayout(map, layerSmall, controlSmall, layerBig, controlBig);
-                // });
+                map.on('zoomend', function () {
+                    zoomMap();
+                });
             });
         });
 
@@ -229,17 +228,11 @@
 
         function removeRegion(region) {
             selectedRegion[region] = false;
-            var layer = overlay[region];
-            if (map.hasLayer(layer)) {
-                map.removeLayer(layer);
-            }
+            zoomMap();
         }
         function addRegion(region) {
             selectedRegion[region] = true;
-            var layer = overlay[region];
-            if (!map.hasLayer(layer)) {
-                map.addLayer(layer);
-            }
+            zoomMap();
         }
 
         function regionData(target,region) {
@@ -253,24 +246,39 @@
         function zoomMap() {
             var zoomlevel = map.getZoom();
             if (zoomlevel < 7) {
-                for (layer of overlayBig) {}
-                if (map.hasLayer(layerBig)) {
-                    map.removeLayer(layerBig);
+                for (var region in overlayBig) {
+                    if (map.hasLayer(overlayBig[region])) {
+                        map.removeLayer(overlayBig[region]);
+                    }
                 }
-                if (!map.hasLayer(layerSmall)) {
-                    map.addLayer(layerSmall);
+                for (var region in selectedRegion) {
+                    if (selectedRegion[region]) {
+                        if (!map.hasLayer(overlay[region])) {
+                            map.addLayer(overlay[region]);
+                        }
+                    } else {
+                        if (map.hasLayer(overlay[region])) {
+                            map.removeLayer(overlay[region]);
+                        }
+                    }
                 }
-                map.removeControl(controlBig);
-                map.addControl(controlSmall);
             } else {
-                if (map.hasLayer(layerSmall)) {
-                    map.removeLayer(layerSmall);
+                for (var region in overlay) {
+                    if (map.hasLayer(overlay[region])) {
+                        map.removeLayer(overlay[region]);
+                    }
                 }
-                if (!map.hasLayer(layerBig)) {
-                    map.addLayer(layerBig);
+                for (var region in selectedRegion) {
+                    if (selectedRegion[region]) {
+                        if (!map.hasLayer(overlayBig[region])) {
+                            map.addLayer(overlayBig[region]);
+                        }
+                    } else {
+                        if (map.hasLayer(overlayBig[region])) {
+                            map.removeLayer(overlayBig[region]);
+                        }
+                    }
                 }
-                map.removeControl(controlSmall);
-                map.addControl(controlBig);
             }
         }
 
