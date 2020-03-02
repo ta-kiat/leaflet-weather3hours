@@ -25,11 +25,24 @@
 
     <script type="text/javascript" src="./assets/station-region.json"></script>
 
-    <script type="text/javascript" src="./lib/xml2json.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
     <style>
         #mapid {
-            height: 97vh;
+            height: 100vh;
+        }
+
+        .pointer-select {
+            cursor: pointer;
+            user-select: none;
         }
     </style>
 
@@ -73,11 +86,17 @@
             return obj;
         };
 
+        var map;
+        var streets;
+        var grayscale;
+        var overlay;
+        var overlayBig;
+        var selectedRegion = {};
         $(document).ready(function () {
             var mapboxUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGEtayIsImEiOiJjazc4cWYycDIwbGN6M2VwY3FjcjZyNWV0In0.L-8FKMpD8KeKPvCpkTsNwA';
             var mapboxAttribution = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>, Weather Data <a href="https://data.tmd.go.th/api/index1.php">TMD Data</a>';
-            var grayscale = L.tileLayer(mapboxUrl, { id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution });
-            var streets = L.tileLayer(mapboxUrl, { id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution });
+            grayscale = L.tileLayer(mapboxUrl, { id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution });
+            streets = L.tileLayer(mapboxUrl, { id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution });
 
 
             var imageList = ['disable-1.1s-128px.svg', 'rain-1.1s-128px.svg', 'sun-1.1s-128px.svg', 'moon-1.1s-128px.svg']
@@ -105,7 +124,7 @@
             };
 
             //var bounds = L.latLngBounds([[10.736717, 97.523186], [16.736717, 103.523186]]);
-            var map = L.map('mapid', {
+            map = L.map('mapid', {
                 center: [13.736717, 100.523186],
                 zoom: 6,
                 layers: [streets]
@@ -118,14 +137,17 @@
             $.get("https://cors-anywhere.herokuapp.com/data.tmd.go.th/api/Weather3Hours/V2/?uid=api&ukey=api12345", function (data) {
                 responseList = xmlToJson(data)['Weather3Hours']['Stations']['Station'];
                 observe = {};
-                for (var station of responseList) {
-                    try {
-                        var wmo = station['WmoStationNumber']['#text'];
-                        var rain = parseFloat(station['Observation']['Rainfall24Hr']['#text']) > 0;
-                        observe[wmo] = rain;
-                    } catch (e) {
+
+                try {
+                    for (var station of responseList) {
+                        try {
+                            var wmo = station['WmoStationNumber']['#text'];
+                            var rain = station['Observation']['Rainfall24Hr']['#text'];
+                            observe[wmo] = rain;
+                        } catch (e) {
+                        }
                     }
-                }
+                } catch (e) { }
 
                 var tmpIndex = 2;
                 var now = new Date();
@@ -136,12 +158,15 @@
                 region = {};
                 for (var i = 0; i < stations.length; i++) {
                     station = stations[i];
-                    if (!station['wmoCode'] in observe) {
+                    if (!(station['wmoCode'] in observe)) {
                         station['icon'] = 0;
-                    } else if (observe[station['wmoCode']]) {
+                        station['rain'] = 'Offline';
+                    } else if (parseFloat(observe[station['wmoCode']]) > 0) {
                         station['icon'] = 1;
+                        station['rain'] = 'Rainfall ' + observe[station['wmoCode']] + ' mm';
                     } else {
                         station['icon'] = tmpIndex;
+                        station['rain'] = 'Rainfall 0 mm';
                     }
 
                     if (station['region'] in region) {
@@ -155,12 +180,14 @@
                 overlayBig = {};
                 allListBig = [];
                 for (var key of Object.keys(region)) {
+                    selectedRegion[key] = true;
                     stations = region[key]
                     stationList = []
                     stationListBig = []
                     for (var station of stations) {
-                        stationList.push(L.marker([station['latitude'], station['longitude']], { icon: iconSmall[station['icon']] }).bindPopup(station['stationNameThai']));
-                        stationListBig.push(L.marker([station['latitude'], station['longitude']], { icon: iconBig[station['icon']] }).bindPopup(station['stationNameThai']));
+                        var text = station['stationNameThai'] + '</br>' + station['latitude'] + ',' + station['longitude'] + '<br>' + station['rain'];
+                        stationList.push(L.marker([station['latitude'], station['longitude']], { icon: iconSmall[station['icon']] }).bindPopup(text));
+                        stationListBig.push(L.marker([station['latitude'], station['longitude']], { icon: iconBig[station['icon']] }).bindPopup(text));
                     }
                     overlay[key] = L.layerGroup(stationList);
                     allList.push(overlay[key]);
@@ -169,20 +196,83 @@
                 }
 
                 loading.removeFrom(map);
-
+                addWeatherSstationControl();
                 var layerSmall = L.layerGroup(allList);
                 var controlSmall = L.control.layers(baseMaps, overlay);
 
                 var layerBig = L.layerGroup(allListBig);
                 var controlBig = L.control.layers(baseMaps, overlayBig);
 
-                mapLayout(map, layerSmall, controlSmall, layerBig, controlBig);
+                map.addLayer(layerSmall);
+                $('#accordionExample').append($('#weather3hoursRegion'));
+                // mapLayout(map, layerSmall, controlSmall, layerBig, controlBig);
 
-                map.on('zoomend', function () {
-                    mapLayout(map, layerSmall, controlSmall, layerBig, controlBig);
-                });
+                // map.on('zoomend', function () {
+                //     mapLayout(map, layerSmall, controlSmall, layerBig, controlBig);
+                // });
             });
         });
+
+        function addWeatherSstationControl() {
+            for (var region of Object.keys(overlay)) {
+                var component = `
+                <div class="form-check">
+                    <input class="form-check-input pointer-select" type="checkbox" checked onchange="regionData(this,'`+region+`')" value="`+region+`" id="check`+region+`">
+                    <label class="form-check-label pointer-select" for="check`+region+`">
+                        `+region+`
+                    </label>
+                </div>`;
+                $("#checkDiv").append($(component));
+            }
+
+        }
+
+        function removeRegion(region) {
+            selectedRegion[region] = false;
+            var layer = overlay[region];
+            if (map.hasLayer(layer)) {
+                map.removeLayer(layer);
+            }
+        }
+        function addRegion(region) {
+            selectedRegion[region] = true;
+            var layer = overlay[region];
+            if (!map.hasLayer(layer)) {
+                map.addLayer(layer);
+            }
+        }
+
+        function regionData(target,region) {
+            if (target.checked) {
+                addRegion(region);
+            } else {
+                removeRegion(region);
+            }
+        }
+
+        function zoomMap() {
+            var zoomlevel = map.getZoom();
+            if (zoomlevel < 7) {
+                for (layer of overlayBig) {}
+                if (map.hasLayer(layerBig)) {
+                    map.removeLayer(layerBig);
+                }
+                if (!map.hasLayer(layerSmall)) {
+                    map.addLayer(layerSmall);
+                }
+                map.removeControl(controlBig);
+                map.addControl(controlSmall);
+            } else {
+                if (map.hasLayer(layerSmall)) {
+                    map.removeLayer(layerSmall);
+                }
+                if (!map.hasLayer(layerBig)) {
+                    map.addLayer(layerBig);
+                }
+                map.removeControl(controlSmall);
+                map.addControl(controlBig);
+            }
+        }
 
         function mapLayout(map, layerSmall, controlSmall, layerBig, controlBig) {
             var zoomlevel = map.getZoom();
@@ -206,12 +296,79 @@
                 map.addControl(controlBig);
             }
         }
+        function toggleMap() {
+            $('#collapseOne').toggle(100);
+        }
+        function toggleWeather3Hours() {
+            $('#collapseTwo').toggle(100);
+        }
+        function handleClickMap(target) {
+            var value = $('input[name="mapRadios"]:checked').val();
+            if (value == 'Streets') {
+                map.addLayer(streets);
+                map.removeLayer(grayscale);
+            } else {
+                map.addLayer(grayscale);
+                map.removeLayer(streets);
+            }
+        }
     </script>
 </head>
 
 
 <body>
-    <div id="mapid"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-9" style="padding: 0px;">
+                <div id="mapid"></div>
+            </div>
+            <div class="col-3" style="padding: 15px;height: 100vh;overflow-y: auto;">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header pointer-select" id="headingOne" onclick="toggleMap()">
+                            <h5 class="mb-0">
+                                Map
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="form-check">
+                                    <input class="form-check-input pointer-select" type="radio" name="mapRadios"
+                                        id="exampleRadios1" value="Streets" checked onclick="handleClickMap(this);">
+                                    <label class="form-check-label pointer-select" for="exampleRadios1">
+                                        Streets
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input pointer-select" type="radio" name="mapRadios"
+                                        id="exampleRadios2" value="Grayscale" onclick="handleClickMap(this);">
+                                    <label class="form-check-label pointer-select" for="exampleRadios2">
+                                        Grayscale
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display:none;">
+                    <div class="card" id="weather3hoursRegion">
+                        <div class="card-header pointer-select" id="headingTwo" onclick="toggleWeather3Hours()">
+                            <h5 class="mb-0">
+                                Weather 3 hours
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body" id="checkDiv">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
