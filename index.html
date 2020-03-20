@@ -94,7 +94,7 @@
         var selectedRegion = {};
         $(document).ready(function () {
             var mapboxUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGEtayIsImEiOiJjazc4cWYycDIwbGN6M2VwY3FjcjZyNWV0In0.L-8FKMpD8KeKPvCpkTsNwA';
-            var mapboxAttribution = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>, Weather Data <a href="https://data.tmd.go.th/api/index1.php">TMD Data</a>';
+            var mapboxAttribution = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>, Weather Data <a href="https://data.tmd.go.th/api/index1.php">TMD Data</a>, Loading and Icons <a href="https://loading.io">loading.io</a>';
             grayscale = L.tileLayer(mapboxUrl, { id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution });
             streets = L.tileLayer(mapboxUrl, { id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution });
 
@@ -210,6 +210,16 @@
                     zoomMap();
                 });
             });
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', './assets/data/cu_tree_ll.geojson');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+                if (xhr.status !== 200) return
+                L.geoJSON(xhr.response).addTo(map);
+            };
+            xhr.send();
         });
 
         function addWeatherSstationControl() {
